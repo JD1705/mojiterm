@@ -246,18 +246,6 @@ typing_extensions = {version = ">=4.16.0", markers = "python_version < \"3.15\""
 trio = ["trio (>=0.32.0)"]
 
 [[package]]
-name = "atlastk"
-version = "0.13.5"
-description = "Easily bring your Python applications online with the world's lightest GUI toolkit."
-optional = false
-python-versions = "*"
-groups = ["main"]
-files = [
-    {file = "atlastk-0.13.5-py3-none-any.whl", hash = "sha256:70184097f424a70d83822d783d46c7579427c4a6e7227ec54099368fd1fb2750"},
-    {file = "atlastk-0.13.5.tar.gz", hash = "sha256:1679045b090e1d411806a55a8bef26d6ca268c0ac31ad07dbd17052774316009"},
-]
-
-[[package]]
 name = "attrs"
 version = "26.1.0"
 description = "Classes Without Boilerplate"
@@ -484,6 +472,18 @@ files = [
 
 [package.extras]
 all = ["coverage (>=7.10.0)", "hypothesis (>=6.141.1)", "mypy (>=1.11.2)", "pytest (>=8.3.2)", "ruff (>=0.16.0)", "ty (>=0.0.37)"]
+
+[[package]]
+name = "iso8601"
+version = "2.1.0"
+description = "Simple module to parse ISO 8601 dates"
+optional = false
+python-versions = ">=3.7,<4.0"
+groups = ["main"]
+files = [
+    {file = "iso8601-2.1.0-py3-none-any.whl", hash = "sha256:aac4145c4dcb66ad8b648a02830f5e2ff6c24af20f4f482689be402db2429242"},
+    {file = "iso8601-2.1.0.tar.gz", hash = "sha256:6b1d3829ee8921c4301998c909f7829fa9ed3cbdac0d3b16af2d743aed1ba8df"},
+]
 
 [[package]]
 name = "jinja2"
@@ -1330,6 +1330,18 @@ files = [
 windows-terminal = ["colorama (>=0.4.6)"]
 
 [[package]]
+name = "pypika-tortoise"
+version = "0.6.5"
+description = "Forked from pypika and streamline just for tortoise-orm"
+optional = false
+python-versions = ">=3.9"
+groups = ["main"]
+files = [
+    {file = "pypika_tortoise-0.6.5-py3-none-any.whl", hash = "sha256:9194ac6ce6ac9bdfc6e959c831c5788ef05ee1371e82ba281b0eb75f4a2bd4f1"},
+    {file = "pypika_tortoise-0.6.5.tar.gz", hash = "sha256:64d96c9b88450f6360ad22a7063933b6a90961a7317f04b2b63c98fd5d705506"},
+]
+
+[[package]]
 name = "python-dotenv"
 version = "1.2.3"
 description = "Read key-value pairs from a .env file and set them as environment variables"
@@ -1445,19 +1457,32 @@ rich = "*"
 textual = ">=0.66.0"
 
 [[package]]
-name = "tortoise"
-version = "0.1.1"
-description = "Turtle graphics on the web."
+name = "tortoise-orm"
+version = "1.1.8"
+description = "Easy async ORM for python, built with relations in mind"
 optional = false
-python-versions = "*"
+python-versions = ">=3.10"
 groups = ["main"]
 files = [
-    {file = "tortoise-0.1.1-py3-none-any.whl", hash = "sha256:bcb58a56d6796cad0db330104450df2caf2ea9e98d844bb2906274bd15c12804"},
-    {file = "tortoise-0.1.1.tar.gz", hash = "sha256:a4ebd69b152d266174b3b0f2a22e3fb8995101eb749d3114813a98f405ab10bb"},
+    {file = "tortoise_orm-1.1.8-py3-none-any.whl", hash = "sha256:3f771365c54297543b3b2b7fab4ecb03e89de0a68a41328d2e171c043e08e911"},
+    {file = "tortoise_orm-1.1.8.tar.gz", hash = "sha256:09e27be9db148824dacea470d01018ab571676f94aa5428a05bcaec44c413ec7"},
 ]
 
 [package.dependencies]
-atlastk = "*"
+aiosqlite = ">=0.16.0,<1.0.0"
+anyio = "*"
+iso8601 = {version = ">=2.1.0,<3.0.0", markers = "python_version < \"4.0\""}
+pypika-tortoise = ">=0.6.5,<1.0.0"
+
+[package.extras]
+accel = ["ciso8601 ; sys_platform != \"win32\" and implementation_name == \"cpython\"", "orjson", "uvloop ; sys_platform != \"win32\" and implementation_name == \"cpython\""]
+aiomysql = ["aiomysql"]
+asyncmy = ["asyncmy (>=0.2.12,<1.0.0)"]
+asyncodbc = ["asyncodbc (>=0.1.1,<1.0.0) ; python_version < \"4.0\""]
+asyncpg = ["asyncpg"]
+ipython = ["ipython", "nest-asyncio (>=1.6.0)"]
+psycopg = ["psycopg[binary,pool] (>=3.0.12,<4.0.0)"]
+ptpython = ["ptpython (>=3.0.0)"]
 
 [[package]]
 name = "typing-extensions"
@@ -1677,4 +1702,4 @@ propcache = ">=0.2.1"
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.12, < 3.14"
-content-hash = "6cc3e1001ef23c5432856cf97d34f8388c3cedf997d1ebdb93a70836cf556281"
+content-hash = "f8fd80599f5bdb25436b050d935693197d80a1b3cf96f44dbe757c9cb6ab109b"
