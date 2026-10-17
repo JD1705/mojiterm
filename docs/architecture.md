@@ -57,7 +57,7 @@ MojiTerm
 │        ├── __init__.py
 │        ├── config.py
 │        └── logger.py
-└── tests              # unittary tests
+└── tests              # unit tests
    ├── __init__.py
    ├── backend
    └── client
